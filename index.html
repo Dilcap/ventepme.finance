@@ -12,24 +12,31 @@
     <meta property="og:description" content="Diagnostic avec un ancien dirigeant, rencontre de spécialistes de la cession, choix de votre conseil : préparez la transmission de votre entreprise." />
     <meta property="og:image" content="https://www.ventepme.finance/assets/usine-region-jura.jpg" />
     <meta property="og:url" content="https://www.ventepme.finance/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&display=swap" rel="stylesheet" />
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <style>
+      /* Charte : bleu nuit, jaune soleil, turquoise d'accord (les trois couleurs du logo). */
       :root {
-        --ink: #13294b;
-        --ink-soft: #3d4b63;
-        --muted: #66718a;
-        --teal: #0b4a4f;
-        --gold: #a9853f;
-        --gold-soft: #f6f1e6;
-        --line: #e3e6ec;
-        --paper: #f7f8fa;
+        --navy: #0e2654;
+        --navy-2: #173a7a;
+        --ink: #0e2654;
+        --ink-soft: #3b4660;
+        --muted: #6a7490;
+        --yellow: #f5b800;
+        --yellow-soft: #fff6d9;
+        --teal: #0f7f86;
+        --teal-soft: #e6f3f3;
+        --line: #e2e6ee;
+        --paper: #f5f7fb;
         --white: #ffffff;
-        --serif: Georgia, "Times New Roman", serif;
+        --title: "Raleway", "Segoe UI", Helvetica, Arial, sans-serif;
         --sans: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-        --wrap: 1120px;
+        --wrap: 1140px;
       }
 
       * { box-sizing: border-box; }
@@ -40,145 +47,217 @@
         color: var(--ink-soft);
         font-family: var(--sans);
         font-size: 17px;
-        line-height: 1.65;
+        line-height: 1.7;
+        letter-spacing: 0.2px;
         -webkit-font-smoothing: antialiased;
       }
       img { max-width: 100%; height: auto; display: block; }
       a { color: var(--teal); }
+      strong { color: var(--ink); font-weight: 700; }
       .wrap { width: min(var(--wrap), calc(100% - 40px)); margin: 0 auto; }
 
-      h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 700; line-height: 1.2; margin: 0; }
-      h1 { font-size: clamp(2.1rem, 4.4vw, 3.3rem); letter-spacing: -0.01em; }
-      h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
-      h3 { font-size: 1.2rem; }
+      h1, h2, h3 { font-family: var(--title); color: var(--ink); line-height: 1.25; margin: 0; }
+      h1 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--white); }
+      h2 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; }
+      h3 { font-size: 1.12rem; font-weight: 700; letter-spacing: 0.3px; }
       p { margin: 0 0 1em; }
 
       .kicker {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--title);
         font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.14em;
+        font-weight: 700;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--gold);
+        color: var(--teal);
         margin-bottom: 14px;
       }
+      .kicker::before { content: ""; width: 28px; height: 3px; background: var(--yellow); }
+      h2 + .rule, .rule { display: block; width: 56px; height: 4px; background: var(--yellow); margin: 18px 0 0; }
 
       /* En-tête */
       header {
         position: sticky;
         top: 0;
         z-index: 10;
-        background: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.97);
         border-bottom: 1px solid var(--line);
         backdrop-filter: blur(6px);
       }
-      .bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
+      .bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 74px; }
       .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-      .brand img { width: 40px; height: auto; }
-      .brand strong { display: block; font-family: var(--serif); font-size: 1.25rem; color: var(--ink); line-height: 1.1; }
-      .brand span { display: block; font-size: 0.78rem; color: var(--muted); }
+      .brand img { width: 42px; }
+      .brand strong { display: block; font-family: var(--title); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; color: var(--navy); line-height: 1.1; }
+      .brand span { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
       .btn {
         display: inline-block;
-        padding: 13px 24px;
-        border-radius: 4px;
-        background: var(--ink);
-        color: var(--white);
-        font-weight: 600;
-        font-size: 0.95rem;
+        padding: 14px 26px;
+        background: var(--yellow);
+        color: var(--navy);
+        font-family: var(--title);
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
         text-decoration: none;
-        border: 1px solid var(--ink);
+        border: 2px solid var(--yellow);
         cursor: pointer;
-        transition: background 0.2s;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
       }
-      .btn:hover { background: var(--teal); border-color: var(--teal); }
-      .btn.ghost { background: transparent; color: var(--ink); }
-      .btn.ghost:hover { background: var(--paper); }
+      .btn:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
+      .btn.ghost { background: transparent; color: var(--navy); border-color: var(--navy); }
+      .btn.ghost:hover { background: var(--navy); color: var(--white); }
+      .btn:disabled { opacity: 0.7; cursor: default; }
 
-      /* Bandeau d'ouverture */
-      .hero { padding: 64px 0 56px; }
-      .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
-      .hero .lead { font-size: 1.15rem; margin: 22px 0 30px; max-width: 34em; }
+      /* Bandeau photo avec bloc en biais */
+      .hero {
+        position: relative;
+        min-height: 520px;
+        display: flex;
+        align-items: flex-end;
+        background:
+          linear-gradient(180deg, rgba(14, 38, 84, 0.05) 30%, rgba(14, 38, 84, 0.45) 100%),
+          url("assets/usine-region-jura.jpg") center 60% / cover no-repeat;
+        overflow: hidden;
+      }
+      .hero-grid { position: relative; z-index: 1; }
+      .hero-band {
+        position: relative;
+        max-width: 760px;
+        margin: 0 0 56px auto;
+        padding: 40px 44px 40px 120px;
+        background: var(--navy);
+        clip-path: polygon(80px 0, 100% 0, 100% 100%, 0 100%);
+      }
+      .hero-band::after {
+        content: "";
+        position: absolute;
+        left: 120px;
+        bottom: 0;
+        width: 120px;
+        height: 5px;
+        background: var(--yellow);
+      }
+      .hero-band .kicker { color: var(--yellow); }
+      .hero-band .kicker::before { background: var(--yellow); }
+      .hex-deco { position: absolute; left: 3%; bottom: -10px; width: 260px; color: rgba(255, 255, 255, 0.55); }
+      .photo-credit { margin-top: 8px; font-size: 0.72rem; color: var(--muted); }
+      .photo-credit a { color: inherit; }
+
+      .intro { padding: 36px 0 54px; }
+      .intro-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center; }
+      .intro .lead { font-size: 1.15rem; margin: 0; padding-left: 22px; border-left: 4px solid var(--teal); }
       .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-      .hero-note { margin-top: 22px; font-size: 0.9rem; color: var(--muted); }
-      figure { margin: 0; }
-      .hero figure img { border-radius: 6px; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: 0 24px 60px rgba(19, 41, 75, 0.14); }
-      figcaption { margin-top: 10px; font-size: 0.78rem; color: var(--muted); }
-      figcaption a { color: inherit; }
+      .hero-note { margin: 14px 0 0; font-size: 0.88rem; color: var(--muted); }
 
       /* Bandeau de confiance */
-      .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
-      .trust ul { list-style: none; margin: 0; padding: 26px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-      .trust li { font-size: 0.92rem; line-height: 1.45; padding-left: 16px; border-left: 2px solid var(--gold); }
-      .trust strong { display: block; color: var(--ink); font-size: 0.98rem; }
+      .trust { background: var(--navy); color: #c9d3ea; }
+      .trust ul { list-style: none; margin: 0; padding: 30px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+      .trust li { font-size: 0.9rem; line-height: 1.5; padding-left: 16px; border-left: 3px solid var(--yellow); }
+      .trust strong { display: block; color: var(--white); font-family: var(--title); font-size: 0.86rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 4px; }
 
-      section { padding: 80px 0; }
-      .narrow { max-width: 760px; }
-      .section-head { margin-bottom: 40px; }
-      .section-head p { margin-top: 14px; font-size: 1.08rem; }
+      section { padding: 84px 0; }
+      .narrow { max-width: 780px; }
+      .section-head { margin-bottom: 42px; }
+      .section-head p { margin-top: 18px; font-size: 1.06rem; }
 
       /* Préambule */
-      .preamble p { font-size: 1.08rem; }
-      .preamble .drop::first-letter { font-family: var(--serif); float: left; font-size: 3.6rem; line-height: 0.9; padding: 6px 10px 0 0; color: var(--ink); }
-
-      .stakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 44px; }
-      .stakes div { background: var(--white); padding: 30px 28px; }
-      .stakes h3 { margin-bottom: 10px; }
+      .preamble p { font-size: 1.06rem; }
+      .stakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+      .stakes div { padding: 28px 26px; background: var(--paper); border-top: 4px solid var(--teal); }
+      .stakes div:nth-child(2) { border-top-color: var(--yellow); }
+      .stakes div:nth-child(3) { border-top-color: var(--navy); }
+      .stakes h3 { margin-bottom: 10px; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.1em; }
       .stakes p { margin: 0; font-size: 0.97rem; }
 
       /* Démarche */
-      .alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: step; }
-      .step { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 32px 28px; }
-      .step .num { font-family: var(--serif); font-size: 2rem; color: var(--gold); line-height: 1; margin-bottom: 16px; }
+      .alt { background: var(--paper); position: relative; }
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+      .step { background: var(--white); padding: 34px 30px; box-shadow: 0 10px 30px rgba(14, 38, 84, 0.07); }
+      .step .num {
+        width: 54px;
+        height: 62px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 20px;
+        background: var(--yellow);
+        color: var(--navy);
+        font-family: var(--title);
+        font-weight: 800;
+        font-size: 1.35rem;
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      }
       .step h3 { margin-bottom: 12px; }
       .step p { font-size: 0.97rem; margin: 0; }
       .places { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-      .places span { font-size: 0.8rem; font-weight: 600; color: var(--teal); background: #eaf2f2; padding: 4px 10px; border-radius: 3px; }
+      .places span { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); background: var(--teal-soft); padding: 5px 10px; }
 
       /* Pourquoi un conseil */
       .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
       blockquote {
-        margin: 26px 0 0;
-        padding: 22px 26px;
-        border-left: 3px solid var(--gold);
-        background: var(--gold-soft);
-        font-family: var(--serif);
-        font-size: 1.15rem;
-        color: var(--ink);
+        margin: 28px 0 0;
+        padding: 24px 28px;
+        border-left: 5px solid var(--yellow);
+        background: var(--yellow-soft);
+        font-family: var(--title);
+        font-weight: 600;
+        font-size: 1.12rem;
+        color: var(--navy);
       }
+      .roles-title { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 16px; }
       .roles { border: 1px solid var(--line); }
-      .role { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 22px 26px; border-bottom: 1px solid var(--line); }
+      .role { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 22px 26px; border-bottom: 1px solid var(--line); }
       .role:last-child { border-bottom: 0; }
-      .role.main { background: var(--ink); }
+      .role.main { background: var(--navy); border-left: 5px solid var(--yellow); }
       .role.main h3, .role.main p { color: var(--white); }
-      .role h3 { font-size: 1.05rem; }
+      .role h3 { font-size: 1rem; }
       .role p { margin: 0; font-size: 0.95rem; }
       .qualities { list-style: none; padding: 0; margin: 22px 0 0; }
-      .qualities li { position: relative; padding: 0 0 14px 30px; }
-      .qualities li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 2px; background: var(--gold); }
-      .qualities strong { color: var(--ink); }
+      .qualities li { position: relative; padding: 0 0 14px 32px; }
+      .qualities li::before { content: ""; position: absolute; left: 0; top: 7px; width: 14px; height: 16px; background: var(--teal); clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%); }
 
       /* Engagements */
       .pledges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-      .pledge h3 { font-size: 1.05rem; margin-bottom: 8px; }
-      .pledge p { font-size: 0.94rem; margin: 0; }
-      .pledge .mark { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-weight: 700; margin-bottom: 14px; }
+      .pledge { background: var(--white); padding: 28px 24px; border-bottom: 4px solid var(--teal); }
+      .pledge h3 { font-size: 1rem; margin-bottom: 8px; }
+      .pledge p { font-size: 0.93rem; margin: 0; }
+      .pledge .mark {
+        width: 40px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 16px;
+        background: var(--navy);
+        color: var(--yellow);
+        font-family: var(--title);
+        font-weight: 800;
+        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      }
 
       /* Formulaire */
-      .contact { background: var(--ink); color: #d9dfea; }
+      .contact {
+        position: relative;
+        background: var(--navy);
+        color: #c9d3ea;
+        clip-path: polygon(0 48px, 100% 0, 100% 100%, 0 100%);
+        padding-top: 120px;
+      }
       .contact h2 { color: var(--white); }
+      .contact strong { color: var(--white); }
       .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
-      .contact .kicker { color: #d8bb7e; }
+      .contact .kicker { color: var(--yellow); }
       .contact-side p { font-size: 1.02rem; }
       .contact-side ul { list-style: none; padding: 0; margin: 26px 0 0; }
-      .contact-side li { padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 0.95rem; }
-      .contact-side li strong { color: var(--white); }
-      form { background: var(--white); color: var(--ink-soft); border-radius: 6px; padding: 34px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25); }
-      form h3 { margin-bottom: 6px; }
-      form .hint { font-size: 0.88rem; color: var(--muted); margin-bottom: 22px; }
+      .contact-side li { padding: 12px 0 12px 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 0.95rem; position: relative; }
+      .contact-side li::before { content: ""; position: absolute; left: 0; top: 22px; width: 8px; height: 8px; background: var(--yellow); }
+      form { background: var(--white); color: var(--ink-soft); padding: 36px; border-top: 5px solid var(--yellow); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25); }
+      form h3 { margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.1em; }
+      form .hint { font-size: 0.86rem; color: var(--muted); margin-bottom: 22px; }
       .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-      label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 14px; }
+      label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
       label .opt { font-weight: 400; color: var(--muted); }
       input, select, textarea {
         display: block;
@@ -189,47 +268,53 @@
         font-size: 0.95rem;
         color: var(--ink);
         background: var(--white);
-        border: 1px solid #cbd1db;
-        border-radius: 4px;
+        border: 1px solid #c8cfdc;
+        border-radius: 0;
       }
-      input:focus, select:focus, textarea:focus { outline: 2px solid rgba(11, 74, 79, 0.25); border-color: var(--teal); }
+      input:focus, select:focus, textarea:focus { outline: 2px solid rgba(15, 127, 134, 0.3); border-color: var(--teal); }
       textarea { min-height: 96px; resize: vertical; }
-      .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 0.85rem; color: var(--ink-soft); }
+      .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 0.84rem; color: var(--ink-soft); }
       .consent input { width: auto; margin-top: 4px; }
-      form .btn { width: 100%; padding: 15px; font-size: 1rem; }
+      form .btn { width: 100%; padding: 16px; font-size: 0.88rem; }
       .form-foot { margin: 14px 0 0; font-size: 0.8rem; color: var(--muted); text-align: center; }
-      .form-ok { display: none; margin-top: 16px; padding: 14px 16px; background: #eaf2f2; color: var(--teal); border-radius: 4px; font-size: 0.9rem; }
+      .form-ok { display: none; margin-top: 16px; padding: 14px 16px; background: var(--teal-soft); color: var(--teal); font-size: 0.9rem; }
       .form-ok.show { display: block; }
       .hp { position: absolute; left: -9999px; }
 
       /* Bloc repertoire.finance */
-      .rf { padding: 72px 0; }
-      .rf-card { display: grid; grid-template-columns: auto 1fr auto; gap: 36px; align-items: center; border: 1px solid var(--line); border-radius: 6px; padding: 40px 44px; background: linear-gradient(180deg, #fbf9f4, #ffffff); }
+      .rf { padding: 76px 0; }
+      .rf-card { display: grid; grid-template-columns: auto 1fr auto; gap: 36px; align-items: center; padding: 40px 44px; background: var(--yellow-soft); border-left: 6px solid var(--yellow); }
       .rf-card img { width: 92px; border-radius: 18px; }
-      .rf-card h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
-      .rf-card p { margin: 10px 0 0; }
+      .rf-card h2 { font-size: clamp(1.2rem, 2.2vw, 1.55rem); }
+      .rf-card p { margin: 12px 0 0; }
+      .rf-card .btn { background: var(--navy); border-color: var(--navy); color: var(--white); }
+      .rf-card .btn:hover { background: var(--teal); border-color: var(--teal); }
       .rf-points { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 14px; padding: 0; list-style: none; font-size: 0.9rem; }
-      .rf-points li::before { content: "✓ "; color: var(--gold); font-weight: 700; }
+      .rf-points li::before { content: "✓ "; color: var(--teal); font-weight: 700; }
 
-      footer { border-top: 1px solid var(--line); padding: 30px 0 40px; font-size: 0.82rem; color: var(--muted); }
+      footer { background: var(--paper); border-top: 1px solid var(--line); padding: 28px 0 36px; font-size: 0.8rem; color: var(--muted); }
       footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
       footer a { color: inherit; }
 
       @media (max-width: 960px) {
-        .hero-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+        .intro-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
         .steps, .stakes { grid-template-columns: 1fr; }
         .trust ul, .pledges { grid-template-columns: 1fr 1fr; }
-        .rf-card { grid-template-columns: 1fr; text-align: left; padding: 32px 28px; }
+        .rf-card { grid-template-columns: 1fr; padding: 32px 28px; }
+        .hex-deco { display: none; }
       }
       @media (max-width: 600px) {
         body { font-size: 16px; }
         section { padding: 60px 0; }
-        .hero { padding: 40px 0; }
+        .hero { min-height: 420px; }
+        .hero-band { padding: 28px 24px 30px 48px; margin-bottom: 28px; clip-path: polygon(32px 0, 100% 0, 100% 100%, 0 100%); }
+        .hero-band::after { left: 48px; }
         .bar { height: 64px; }
         .brand span, .bar .btn { display: none; }
         .trust ul, .pledges, .row { grid-template-columns: 1fr; }
         .role { grid-template-columns: 1fr; gap: 6px; }
-        form { padding: 24px 20px; }
+        form { padding: 26px 20px; }
+        .contact { clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%); padding-top: 80px; }
       }
     </style>
   </head>
@@ -249,30 +334,43 @@
 
     <main id="top">
       <!-- Ouverture -->
-      <div class="hero">
+      <div class="hero" role="img" aria-label="Une usine de PME au milieu des prés, au pied de collines boisées">
         <div class="wrap hero-grid">
           <div>
-            <span class="kicker">Cession et transmission de PME</span>
-            <h1>Céder son entreprise ne s’improvise pas. Cela se prépare.</h1>
-            <p class="lead">
-              ventepme.finance accompagne les dirigeants de PME bien avant la cession&nbsp;: un diagnostic avec un ancien
-              dirigeant, la rencontre de spécialistes de la cession près de chez vous et à Paris, puis l’aide au choix du
-              conseil qui vous accompagnera.
-            </p>
+            <div class="hero-band">
+              <span class="kicker">Cession et transmission de PME</span>
+              <h1>Céder son entreprise ne s’improvise pas. Cela se prépare.</h1>
+            </div>
+          </div>
+        </div>
+        <svg class="hex-deco" viewBox="0 0 260 150" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M40 5 75 25v40L40 85 5 65V25z" />
+            <path d="M110 45l35 20v40l-35 20-35-20V65z" />
+            <path d="M180 5l35 20v40l-35 20-35-20V25z" />
+          </g>
+        </svg>
+      </div>
+      <p class="photo-credit wrap">
+        Une PME industrielle à Lons-le-Saunier, dans le Jura. Photo&nbsp;: Sukkoria,
+        <a href="https://commons.wikimedia.org/wiki/File:Usine_Kiva.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>,
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="noopener" target="_blank">CC BY-SA 4.0</a>.
+      </p>
+
+      <div class="intro">
+        <div class="wrap intro-grid">
+          <p class="lead">
+            <strong>ventepme.finance accompagne les dirigeants de PME bien avant la cession</strong>&nbsp;: un diagnostic avec
+            un ancien dirigeant, la rencontre de spécialistes de la cession près de chez vous et à Paris, puis l’aide au
+            choix du conseil qui vous accompagnera.
+          </p>
+          <div>
             <div class="hero-actions">
               <a class="btn" href="#contact">Préparer ma cession</a>
               <a class="btn ghost" href="#demarche">Découvrir la démarche</a>
             </div>
             <p class="hero-note">Premier échange confidentiel et sans engagement.</p>
           </div>
-          <figure>
-            <img src="assets/usine-region-jura.jpg" alt="Une usine de PME au milieu des prés, au pied de collines boisées" width="2000" height="1500" fetchpriority="high" />
-            <figcaption>
-              Une PME industrielle à Lons-le-Saunier, dans le Jura. Photo&nbsp;: Sukkoria,
-              <a href="https://commons.wikimedia.org/wiki/File:Usine_Kiva.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>,
-              <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="noopener" target="_blank">CC BY-SA 4.0</a>.
-            </figcaption>
-          </figure>
         </div>
       </div>
 
@@ -293,17 +391,17 @@
           <div class="narrow">
             <span class="kicker">Préambule</span>
             <h2 id="marche">Le marché de la transmission d’entreprise</h2>
-            <p class="drop" style="margin-top: 22px">
+            <p style="margin-top: 22px">
               Chaque année, des dizaines de milliers d’entreprises françaises changent de mains. Une génération de
               dirigeants, qui a bâti des PME solides dans nos villes et nos territoires, arrive à l’âge de passer le
               relais. Les repreneurs existent&nbsp;: groupes industriels, fonds d’investissement, entrepreneurs, cadres
-              qui veulent reprendre une affaire. Mais une transmission réussie ne tient pas au hasard d’une rencontre.
+              qui veulent reprendre une affaire. Mais <strong>une transmission réussie ne tient pas au hasard d’une rencontre</strong>.
             </p>
             <p>
               Le marché du conseil en cession est riche, plusieurs milliers de professionnels l’animent en France, mais il
               reste peu lisible pour un dirigeant qui ne vend son entreprise qu’une fois dans sa vie. Faute de repères,
               beaucoup choisissent leur conseil par défaut, trop tard, ou sur la seule recommandation de leur entourage.
-              Les dossiers les mieux préparés sont ceux qui obtiennent les meilleures conditions, de prix comme de
+              <strong>Les dossiers les mieux préparés sont ceux qui obtiennent les meilleures conditions</strong>, de prix comme de
               continuité.
             </p>
           </div>
@@ -323,7 +421,7 @@
             </div>
           </div>
           <p class="narrow" style="margin-top: 28px; font-size: 1.08rem">
-            C’est une étape importante, et elle se prépare idéalement plusieurs années à l’avance&nbsp;: pour mettre
+            C’est une étape importante, et elle <strong>se prépare idéalement plusieurs années à l’avance</strong>&nbsp;: pour mettre
             l’entreprise en ordre, connaître sa valeur, réfléchir au bon calendrier et choisir les bonnes personnes pour
             vous accompagner.
           </p>
@@ -387,7 +485,7 @@
             <blockquote>Un bon conseil se choisit comme un associé, pas comme un fournisseur.</blockquote>
           </div>
           <div>
-            <h3 style="margin-bottom: 16px">Chacun son rôle</h3>
+            <h3 class="roles-title">Chacun son rôle</h3>
             <div class="roles">
               <div class="role">
                 <h3>L’expert-comptable</h3>
