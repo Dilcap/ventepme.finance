@@ -542,34 +542,72 @@
     </footer>
 
     <script>
+      /* Les demandes sont enregistrées dans la base de contacts de repertoire.finance
+         (même table et même alerte que son propre formulaire). _e et _hp servent
+         à son contrôle anti-robots. */
+      const API = "https://repertoire.finance/api/contact";
+      const MAIL = "cauger@repertoire.finance";
+      const openedAt = Date.now();
       const form = document.getElementById("lead-form");
       const ok = document.getElementById("form-ok");
-      form.addEventListener("submit", (event) => {
+      const button = form.querySelector("button[type=submit]");
+
+      function show(text, isError) {
+        ok.textContent = text;
+        ok.style.background = isError ? "#fbeeee" : "";
+        ok.style.color = isError ? "#8a2a2a" : "";
+        ok.classList.add("show");
+      }
+
+      form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        if (form.site.value) return;
         if (!form.checkValidity()) {
           form.reportValidity();
           return;
         }
         const d = new FormData(form);
-        const lines = [
-          `Nom : ${d.get("nom")}`,
+        const full = String(d.get("nom")).trim();
+        const cut = full.indexOf(" ");
+        const details = [
           `Fonction : ${d.get("fonction")}`,
-          `Email : ${d.get("email")}`,
-          `Téléphone : ${d.get("telephone")}`,
           `Entreprise : ${d.get("entreprise")}`,
           `Ville / région : ${d.get("ville")}`,
-          `Chiffre d'affaires : ${d.get("ca")}`,
-          `Horizon : ${d.get("horizon")}`,
-          "",
-          d.get("message") || "",
+          `Horizon envisagé : ${d.get("horizon")}`,
         ];
-        const subject = encodeURIComponent(`ventepme.finance : demande de rappel (${d.get("entreprise")})`);
-        const body = encodeURIComponent(lines.join("\n"));
-        if (window.va) window.va("event", { name: "lead_form_submit" });
-        window.location.href = `mailto:cauger@repertoire.finance?subject=${subject}&body=${body}`;
-        ok.textContent = "Votre messagerie s’ouvre avec votre demande pré-remplie : il ne vous reste qu’à l’envoyer. Si rien ne s’ouvre, écrivez-nous à cauger@repertoire.finance.";
-        ok.classList.add("show");
+        const extra = String(d.get("message") || "").trim();
+        const payload = {
+          prenom: cut > 0 ? full.slice(0, cut) : "",
+          nom: cut > 0 ? full.slice(cut + 1) : full,
+          email: d.get("email"),
+          telephone: d.get("telephone"),
+          chiffre_affaires: d.get("ca"),
+          message: details.join("\n") + (extra ? "\n\n" + extra : ""),
+          motif: "diagnostic",
+          type_operation: "cession",
+          consentement: form.consentement.checked,
+          _hp: form.site.value,
+          _e: Date.now() - openedAt,
+        };
+
+        button.disabled = true;
+        button.textContent = "Envoi en cours…";
+        try {
+          const r = await fetch(API, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const json = await r.json().catch(() => ({}));
+          if (!r.ok) throw new Error(json.error || "Erreur " + r.status);
+          if (window.va) window.va("event", { name: "lead_form_submit" });
+          form.reset();
+          button.textContent = "Demande envoyée";
+          show("Merci, votre demande a bien été reçue. Nous vous rappelons sous 48 heures, en toute confidentialité.");
+        } catch (err) {
+          button.disabled = false;
+          button.textContent = "Demander à être rappelé";
+          show(`L’envoi n’a pas abouti (${err.message}). Vous pouvez réessayer ou nous écrire directement à ${MAIL}.`, true);
+        }
       });
     </script>
   </body>
