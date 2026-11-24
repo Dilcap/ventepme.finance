@@ -3,618 +3,573 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="ventepme.finance accompagne les dirigeants de PME dans leur projet de cession, de transmission ou de croissance externe." />
-    <title>ventepme.finance | Cession, transmission et M&A pour PME</title>
+    <title>ventepme.finance | Préparer la cession de votre PME</title>
+    <meta name="description" content="Céder son entreprise se prépare. ventepme.finance propose aux dirigeants de PME un diagnostic avec un ancien dirigeant, la rencontre de spécialistes de la cession de leur ville, de leur région et de Paris, puis un accompagnement dans le choix de leur conseil." />
+    <link rel="canonical" href="https://www.ventepme.finance/" />
+    <link rel="icon" type="image/png" href="assets/logo-ventepme.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ventepme.finance | Préparer la cession de votre PME" />
+    <meta property="og:description" content="Diagnostic avec un ancien dirigeant, rencontre de spécialistes de la cession, choix de votre conseil : préparez la transmission de votre entreprise." />
+    <meta property="og:image" content="https://www.ventepme.finance/assets/usine-region-jura.jpg" />
+    <meta property="og:url" content="https://www.ventepme.finance/" />
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <style>
       :root {
-        --bg: #07131f;
-        --bg-soft: #0d2234;
-        --card: rgba(10, 24, 38, 0.76);
-        --line: rgba(255, 255, 255, 0.12);
-        --text: #f4f7fb;
-        --muted: rgba(244, 247, 251, 0.72);
-        --accent: #d7b25f;
-        --accent-2: #31a3a6;
-        --shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+        --ink: #13294b;
+        --ink-soft: #3d4b63;
+        --muted: #66718a;
+        --teal: #0b4a4f;
+        --gold: #a9853f;
+        --gold-soft: #f6f1e6;
+        --line: #e3e6ec;
+        --paper: #f7f8fa;
+        --white: #ffffff;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+        --wrap: 1120px;
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top left, rgba(49, 163, 166, 0.16), transparent 28%),
-          radial-gradient(circle at 85% 15%, rgba(215, 178, 95, 0.16), transparent 24%),
-          linear-gradient(135deg, #06111b 0%, #081723 42%, #0b2030 100%);
-        min-height: 100vh;
+        background: var(--white);
+        color: var(--ink-soft);
+        font-family: var(--sans);
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
       }
+      img { max-width: 100%; height: auto; display: block; }
+      a { color: var(--teal); }
+      .wrap { width: min(var(--wrap), calc(100% - 40px)); margin: 0 auto; }
 
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-        background-size: 56px 56px;
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 92%);
-      }
+      h1, h2, h3 { font-family: var(--serif); color: var(--ink); font-weight: 700; line-height: 1.2; margin: 0; }
+      h1 { font-size: clamp(2.1rem, 4.4vw, 3.3rem); letter-spacing: -0.01em; }
+      h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+      h3 { font-size: 1.2rem; }
+      p { margin: 0 0 1em; }
 
-      .wrap {
-        width: min(1180px, calc(100% - 40px));
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-      }
-
-      header {
-        padding: 22px 0 0;
-      }
-
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 14px 18px;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: rgba(5, 12, 20, 0.52);
-        backdrop-filter: blur(16px);
-        box-shadow: var(--shadow);
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .brand img {
-        width: 58px;
-        height: 58px;
-        object-fit: contain;
-        flex: 0 0 auto;
-        filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.28));
-      }
-
-      .brand strong {
-        display: block;
-        font-size: 1rem;
-        letter-spacing: 0.02em;
-      }
-
-      .brand span {
-        display: block;
-        color: var(--muted);
-        font-size: 0.88rem;
-      }
-
-      .nav a.cta {
-        padding: 12px 18px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, var(--accent), #e8cf8e);
-        color: #112133;
-        text-decoration: none;
-        font-weight: 700;
-        box-shadow: 0 14px 30px rgba(215, 178, 95, 0.22);
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 36px;
-        align-items: center;
-        padding: 72px 0 36px;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 9px 14px;
-        border: 1px solid rgba(215, 178, 95, 0.25);
-        border-radius: 999px;
-        background: rgba(215, 178, 95, 0.08);
-        color: #f4e4b9;
-        font-size: 0.88rem;
+      .kicker {
+        display: inline-block;
+        font-size: 0.78rem;
         font-weight: 600;
-      }
-
-      h1 {
-        margin: 18px 0 18px;
-        font-size: clamp(2.6rem, 5vw, 5.2rem);
-        line-height: 0.96;
-        letter-spacing: -0.05em;
-        max-width: 10ch;
-      }
-
-      .lead {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: var(--muted);
-        max-width: 60ch;
-        margin: 0 0 28px;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-bottom: 28px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 14px 20px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 700;
-        border: 1px solid transparent;
-      }
-
-      .button.primary {
-        background: linear-gradient(135deg, var(--accent), #ebd89f);
-        color: #142234;
-      }
-
-      .button.secondary {
-        background: rgba(255, 255, 255, 0.03);
-        color: var(--text);
-        border-color: var(--line);
-      }
-
-      .proofs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .proof {
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.03);
-        padding: 12px 14px;
-        border-radius: 16px;
-        color: var(--muted);
-      }
-
-      .panel {
-        position: relative;
-        border: 1px solid var(--line);
-        border-radius: 30px;
-        background: linear-gradient(180deg, rgba(15, 34, 50, 0.9), rgba(7, 15, 24, 0.86));
-        box-shadow: var(--shadow);
-        overflow: hidden;
-        padding: 22px;
-      }
-
-      .panel::before {
-        content: "";
-        position: absolute;
-        inset: auto -10% -25% auto;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(49, 163, 166, 0.26), transparent 65%);
-        pointer-events: none;
-      }
-
-      .panel img {
-        display: block;
-        width: min(100%, 430px);
-        margin: 0 auto 18px;
-        aspect-ratio: 1;
-        object-fit: contain;
-        filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.25));
-      }
-
-      .mini-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .metric {
-        padding: 16px;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .metric strong {
-        display: block;
-        font-size: 1.3rem;
-        margin-bottom: 4px;
-      }
-
-      .metric span {
-        color: var(--muted);
-        font-size: 0.94rem;
-      }
-
-      section {
-        padding: 26px 0;
-      }
-
-      .section-head {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 20px;
-        margin-bottom: 18px;
-      }
-
-      .section-head h2 {
-        margin: 0;
-        font-size: clamp(1.7rem, 3vw, 2.5rem);
-        letter-spacing: -0.03em;
-      }
-
-      .section-head p {
-        margin: 0;
-        color: var(--muted);
-        max-width: 52ch;
-        line-height: 1.6;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .card {
-        padding: 22px;
-        border-radius: 22px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--line);
-        min-height: 100%;
-      }
-
-      .card .icon {
-        width: 46px;
-        height: 46px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
         margin-bottom: 14px;
-        color: #0f2030;
-        font-weight: 800;
-        background: linear-gradient(135deg, #e6c97c, #f3e0a8);
       }
 
-      .card h3 {
-        margin: 0 0 10px;
-        font-size: 1.14rem;
+      /* En-tête */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.96);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(6px);
       }
+      .bar { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 72px; }
+      .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+      .brand img { width: 40px; height: auto; }
+      .brand strong { display: block; font-family: var(--serif); font-size: 1.25rem; color: var(--ink); line-height: 1.1; }
+      .brand span { display: block; font-size: 0.78rem; color: var(--muted); }
 
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .lead-form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        align-items: start;
-      }
-
-      .form-box,
-      .aside-box {
-        border-radius: 26px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
-        box-shadow: var(--shadow);
-      }
-
-      .form-box {
-        padding: 24px;
-      }
-
-      .form-box h3,
-      .aside-box h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 1.5rem;
-      }
-
-      .form-box p,
-      .aside-box p {
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      form {
-        display: grid;
-        gap: 12px;
-        margin-top: 18px;
-      }
-
-      .grid2 {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      input,
-      select,
-      textarea {
-        width: 100%;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: rgba(5, 12, 20, 0.55);
-        color: var(--text);
-        border-radius: 14px;
-        padding: 14px 15px;
-        font: inherit;
-      }
-
-      textarea {
-        min-height: 124px;
-        resize: vertical;
-      }
-
-      .submit {
-        border: 0;
+      .btn {
+        display: inline-block;
+        padding: 13px 24px;
+        border-radius: 4px;
+        background: var(--ink);
+        color: var(--white);
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        border: 1px solid var(--ink);
         cursor: pointer;
-        justify-self: start;
+        transition: background 0.2s;
       }
+      .btn:hover { background: var(--teal); border-color: var(--teal); }
+      .btn.ghost { background: transparent; color: var(--ink); }
+      .btn.ghost:hover { background: var(--paper); }
 
-      .aside-box {
-        padding: 24px;
-        display: grid;
-        gap: 16px;
+      /* Bandeau d'ouverture */
+      .hero { padding: 64px 0 56px; }
+      .hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+      .hero .lead { font-size: 1.15rem; margin: 22px 0 30px; max-width: 34em; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+      .hero-note { margin-top: 22px; font-size: 0.9rem; color: var(--muted); }
+      figure { margin: 0; }
+      .hero figure img { border-radius: 6px; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: 0 24px 60px rgba(19, 41, 75, 0.14); }
+      figcaption { margin-top: 10px; font-size: 0.78rem; color: var(--muted); }
+      figcaption a { color: inherit; }
+
+      /* Bandeau de confiance */
+      .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
+      .trust ul { list-style: none; margin: 0; padding: 26px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+      .trust li { font-size: 0.92rem; line-height: 1.45; padding-left: 16px; border-left: 2px solid var(--gold); }
+      .trust strong { display: block; color: var(--ink); font-size: 0.98rem; }
+
+      section { padding: 80px 0; }
+      .narrow { max-width: 760px; }
+      .section-head { margin-bottom: 40px; }
+      .section-head p { margin-top: 14px; font-size: 1.08rem; }
+
+      /* Préambule */
+      .preamble p { font-size: 1.08rem; }
+      .preamble .drop::first-letter { font-family: var(--serif); float: left; font-size: 3.6rem; line-height: 0.9; padding: 6px 10px 0 0; color: var(--ink); }
+
+      .stakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 44px; }
+      .stakes div { background: var(--white); padding: 30px 28px; }
+      .stakes h3 { margin-bottom: 10px; }
+      .stakes p { margin: 0; font-size: 0.97rem; }
+
+      /* Démarche */
+      .alt { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: step; }
+      .step { background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 32px 28px; }
+      .step .num { font-family: var(--serif); font-size: 2rem; color: var(--gold); line-height: 1; margin-bottom: 16px; }
+      .step h3 { margin-bottom: 12px; }
+      .step p { font-size: 0.97rem; margin: 0; }
+      .places { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+      .places span { font-size: 0.8rem; font-weight: 600; color: var(--teal); background: #eaf2f2; padding: 4px 10px; border-radius: 3px; }
+
+      /* Pourquoi un conseil */
+      .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+      blockquote {
+        margin: 26px 0 0;
+        padding: 22px 26px;
+        border-left: 3px solid var(--gold);
+        background: var(--gold-soft);
+        font-family: var(--serif);
+        font-size: 1.15rem;
+        color: var(--ink);
       }
+      .roles { border: 1px solid var(--line); }
+      .role { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 22px 26px; border-bottom: 1px solid var(--line); }
+      .role:last-child { border-bottom: 0; }
+      .role.main { background: var(--ink); }
+      .role.main h3, .role.main p { color: var(--white); }
+      .role h3 { font-size: 1.05rem; }
+      .role p { margin: 0; font-size: 0.95rem; }
+      .qualities { list-style: none; padding: 0; margin: 22px 0 0; }
+      .qualities li { position: relative; padding: 0 0 14px 30px; }
+      .qualities li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 2px; background: var(--gold); }
+      .qualities strong { color: var(--ink); }
 
-      .check {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
+      /* Engagements */
+      .pledges { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+      .pledge h3 { font-size: 1.05rem; margin-bottom: 8px; }
+      .pledge p { font-size: 0.94rem; margin: 0; }
+      .pledge .mark { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: grid; place-items: center; font-weight: 700; margin-bottom: 14px; }
+
+      /* Formulaire */
+      .contact { background: var(--ink); color: #d9dfea; }
+      .contact h2 { color: var(--white); }
+      .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: start; }
+      .contact .kicker { color: #d8bb7e; }
+      .contact-side p { font-size: 1.02rem; }
+      .contact-side ul { list-style: none; padding: 0; margin: 26px 0 0; }
+      .contact-side li { padding: 12px 0; border-top: 1px solid rgba(255, 255, 255, 0.14); font-size: 0.95rem; }
+      .contact-side li strong { color: var(--white); }
+      form { background: var(--white); color: var(--ink-soft); border-radius: 6px; padding: 34px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25); }
+      form h3 { margin-bottom: 6px; }
+      form .hint { font-size: 0.88rem; color: var(--muted); margin-bottom: 22px; }
+      .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 14px; }
+      label .opt { font-weight: 400; color: var(--muted); }
+      input, select, textarea {
+        display: block;
+        width: 100%;
+        margin-top: 6px;
+        padding: 11px 12px;
+        font: inherit;
+        font-size: 0.95rem;
+        color: var(--ink);
+        background: var(--white);
+        border: 1px solid #cbd1db;
+        border-radius: 4px;
       }
+      input:focus, select:focus, textarea:focus { outline: 2px solid rgba(11, 74, 79, 0.25); border-color: var(--teal); }
+      textarea { min-height: 96px; resize: vertical; }
+      .consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 0.85rem; color: var(--ink-soft); }
+      .consent input { width: auto; margin-top: 4px; }
+      form .btn { width: 100%; padding: 15px; font-size: 1rem; }
+      .form-foot { margin: 14px 0 0; font-size: 0.8rem; color: var(--muted); text-align: center; }
+      .form-ok { display: none; margin-top: 16px; padding: 14px 16px; background: #eaf2f2; color: var(--teal); border-radius: 4px; font-size: 0.9rem; }
+      .form-ok.show { display: block; }
+      .hp { position: absolute; left: -9999px; }
 
-      .check span:first-child {
-        width: 26px;
-        height: 26px;
-        border-radius: 9px;
-        display: grid;
-        place-items: center;
-        color: #0e1f31;
-        font-weight: 800;
-        background: linear-gradient(135deg, var(--accent-2), #9fe5d8);
-        flex: 0 0 auto;
-        margin-top: 1px;
+      /* Bloc repertoire.finance */
+      .rf { padding: 72px 0; }
+      .rf-card { display: grid; grid-template-columns: auto 1fr auto; gap: 36px; align-items: center; border: 1px solid var(--line); border-radius: 6px; padding: 40px 44px; background: linear-gradient(180deg, #fbf9f4, #ffffff); }
+      .rf-card img { width: 92px; border-radius: 18px; }
+      .rf-card h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); }
+      .rf-card p { margin: 10px 0 0; }
+      .rf-points { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 14px; padding: 0; list-style: none; font-size: 0.9rem; }
+      .rf-points li::before { content: "✓ "; color: var(--gold); font-weight: 700; }
+
+      footer { border-top: 1px solid var(--line); padding: 30px 0 40px; font-size: 0.82rem; color: var(--muted); }
+      footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+      footer a { color: inherit; }
+
+      @media (max-width: 960px) {
+        .hero-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+        .steps, .stakes { grid-template-columns: 1fr; }
+        .trust ul, .pledges { grid-template-columns: 1fr 1fr; }
+        .rf-card { grid-template-columns: 1fr; text-align: left; padding: 32px 28px; }
       }
-
-      footer {
-        padding: 34px 0 48px;
-        color: rgba(244, 247, 251, 0.62);
-        font-size: 0.94rem;
-      }
-
-      @media (max-width: 920px) {
-        .hero,
-        .lead-form,
-        .cards,
-        .mini-grid,
-        .grid2 {
-          grid-template-columns: 1fr;
-        }
-
-        .section-head,
-        .nav {
-          align-items: start;
-          flex-direction: column;
-        }
-
-        h1 {
-          max-width: none;
-        }
-      }
-
-      @media (max-width: 640px) {
-        .wrap {
-          width: min(100% - 24px, 1180px);
-        }
-
-        header {
-          padding-top: 12px;
-        }
-
-        .hero {
-          padding-top: 44px;
-        }
-
-        .nav {
-          border-radius: 22px;
-        }
-
-        .panel,
-        .form-box,
-        .aside-box,
-        .card {
-          border-radius: 20px;
-        }
+      @media (max-width: 600px) {
+        body { font-size: 16px; }
+        section { padding: 60px 0; }
+        .hero { padding: 40px 0; }
+        .bar { height: 64px; }
+        .brand span, .bar .btn { display: none; }
+        .trust ul, .pledges, .row { grid-template-columns: 1fr; }
+        .role { grid-template-columns: 1fr; gap: 6px; }
+        form { padding: 24px 20px; }
       }
     </style>
   </head>
   <body>
-    <div class="wrap">
-      <header>
-        <nav class="nav">
-          <a class="brand" href="#top">
-            <img src="assets/logo.png" alt="Logo ventepme.finance" />
-            <div>
-              <strong>ventepme.finance</strong>
-              <span>M&A, transmission et cession de PME</span>
-            </div>
-          </a>
-          <a class="cta" href="#lead">Obtenir un diagnostic</a>
-        </nav>
-      </header>
-
-      <main id="top">
-        <section class="hero">
+    <header>
+      <div class="wrap bar">
+        <a class="brand" href="#top">
+          <img src="assets/logo-ventepme.png" alt="" width="40" height="38" />
           <div>
-            <div class="eyebrow">Accompagnement M&A pour dirigeants de PME</div>
-            <h1>Faites de votre cession un vrai levier de valeur.</h1>
+            <strong>ventepme.finance</strong>
+            <span>Préparer la transmission de votre entreprise</span>
+          </div>
+        </a>
+        <a class="btn" href="#contact">Demander un premier échange</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Ouverture -->
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="kicker">Cession et transmission de PME</span>
+            <h1>Céder son entreprise ne s’improvise pas. Cela se prépare.</h1>
             <p class="lead">
-              ventepme.finance aide les dirigeants à préparer, valoriser et vendre leur PME avec une approche
-              claire, rapide et orientée résultat. Nous transformons l’intérêt en rendez-vous qualifiés grâce à une
-              promesse simple: expertise, discrétion et exécution.
+              ventepme.finance accompagne les dirigeants de PME bien avant la cession&nbsp;: un diagnostic avec un ancien
+              dirigeant, la rencontre de spécialistes de la cession près de chez vous et à Paris, puis l’aide au choix du
+              conseil qui vous accompagnera.
             </p>
-            <div class="actions">
-              <a class="button primary" href="#lead">Parler de mon projet</a>
-              <a class="button secondary" href="#services">Découvrir l’approche</a>
+            <div class="hero-actions">
+              <a class="btn" href="#contact">Préparer ma cession</a>
+              <a class="btn ghost" href="#demarche">Découvrir la démarche</a>
             </div>
-            <div class="proofs">
-              <div class="proof">Cession de PME</div>
-              <div class="proof">Recherche de repreneurs</div>
-              <div class="proof">Croissance externe</div>
-              <div class="proof">Préparation à la vente</div>
-            </div>
+            <p class="hero-note">Premier échange confidentiel et sans engagement.</p>
           </div>
+          <figure>
+            <img src="assets/usine-region-jura.jpg" alt="Une usine de PME au milieu des prés, au pied de collines boisées" width="2000" height="1500" fetchpriority="high" />
+            <figcaption>
+              Une PME industrielle à Lons-le-Saunier, dans le Jura. Photo&nbsp;: Sukkoria,
+              <a href="https://commons.wikimedia.org/wiki/File:Usine_Kiva.jpg" rel="noopener" target="_blank">Wikimedia Commons</a>,
+              <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="noopener" target="_blank">CC BY-SA 4.0</a>.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
 
-          <aside class="panel" aria-label="Résumé de proposition de valeur">
-            <img src="assets/logo.png" alt="" />
-            <div class="mini-grid">
-              <div class="metric">
-                <strong>Vision claire</strong>
-                <span>Un parcours lisible pour capter et qualifier les leads.</span>
-              </div>
-              <div class="metric">
-                <strong>Process cadré</strong>
-                <span>Des étapes concrètes pour rassurer les dirigeants.</span>
-              </div>
-              <div class="metric">
-                <strong>Position premium</strong>
-                <span>Un univers visuel sérieux, sobre et crédible.</span>
-              </div>
-              <div class="metric">
-                <strong>Conversion rapide</strong>
-                <span>Une mise en avant claire du contact et du diagnostic.</span>
-              </div>
-            </div>
-          </aside>
-        </section>
+      <div class="trust" aria-label="Nos engagements en bref">
+        <div class="wrap">
+          <ul>
+            <li><strong>Confidentialité</strong>Aucune information transmise sans votre accord.</li>
+            <li><strong>Indépendance</strong>Aucun conseil ne nous rémunère.</li>
+            <li><strong>Expérience</strong>Plus de vingt-cinq ans d’opérations, côté banque et côté entreprise.</li>
+            <li><strong>Proximité</strong>Des spécialistes de votre ville, de votre région et de Paris.</li>
+          </ul>
+        </div>
+      </div>
 
-        <section id="services">
-          <div class="section-head">
-            <h2>Un site pensé pour générer des leads M&A.</h2>
+      <!-- Préambule -->
+      <section class="preamble" aria-labelledby="marche">
+        <div class="wrap">
+          <div class="narrow">
+            <span class="kicker">Préambule</span>
+            <h2 id="marche">Le marché de la transmission d’entreprise</h2>
+            <p class="drop" style="margin-top: 22px">
+              Chaque année, des dizaines de milliers d’entreprises françaises changent de mains. Une génération de
+              dirigeants, qui a bâti des PME solides dans nos villes et nos territoires, arrive à l’âge de passer le
+              relais. Les repreneurs existent&nbsp;: groupes industriels, fonds d’investissement, entrepreneurs, cadres
+              qui veulent reprendre une affaire. Mais une transmission réussie ne tient pas au hasard d’une rencontre.
+            </p>
             <p>
-              Chaque bloc pousse à la prise de contact: promesse forte, preuves rapides, discours rassurant et
-              formulaire simple.
+              Le marché du conseil en cession est riche, plusieurs milliers de professionnels l’animent en France, mais il
+              reste peu lisible pour un dirigeant qui ne vend son entreprise qu’une fois dans sa vie. Faute de repères,
+              beaucoup choisissent leur conseil par défaut, trop tard, ou sur la seule recommandation de leur entourage.
+              Les dossiers les mieux préparés sont ceux qui obtiennent les meilleures conditions, de prix comme de
+              continuité.
             </p>
           </div>
-          <div class="cards">
-            <article class="card">
-              <div class="icon">01</div>
-              <h3>Attirer le bon dossier</h3>
-              <p>Une page d’accueil qui parle immédiatement aux dirigeants de PME, sans jargon inutile.</p>
-            </article>
-            <article class="card">
-              <div class="icon">02</div>
-              <h3>Qualifier l’intention</h3>
-              <p>Des signaux de crédibilité pour encourager les prospects à laisser leurs coordonnées.</p>
-            </article>
-            <article class="card">
-              <div class="icon">03</div>
-              <h3>Déclencher l’appel</h3>
-              <p>Un formulaire court et visible pour transformer la visite en prise de rendez-vous.</p>
-            </article>
-          </div>
-        </section>
 
-        <section id="lead" class="lead-form">
-          <div class="form-box">
-            <h3>Recevez un diagnostic rapide</h3>
-            <p>
-              Dites-nous où vous en êtes: cession, transmission familiale, recherche d’acquéreur ou réflexion
-              stratégique. Nous revenons vers vous avec une première lecture.
+          <div class="stakes">
+            <div>
+              <h3>Pour le dirigeant</h3>
+              <p>L’aboutissement d’une vie professionnelle, la valeur d’années de travail, et la question de l’après.</p>
+            </div>
+            <div>
+              <h3>Pour sa famille</h3>
+              <p>Un patrimoine à transmettre ou à sécuriser, parfois une succession à organiser entre plusieurs générations.</p>
+            </div>
+            <div>
+              <h3>Pour ses salariés</h3>
+              <p>La pérennité de leur emploi, de leur savoir-faire et de l’entreprise dans son territoire.</p>
+            </div>
+          </div>
+          <p class="narrow" style="margin-top: 28px; font-size: 1.08rem">
+            C’est une étape importante, et elle se prépare idéalement plusieurs années à l’avance&nbsp;: pour mettre
+            l’entreprise en ordre, connaître sa valeur, réfléchir au bon calendrier et choisir les bonnes personnes pour
+            vous accompagner.
+          </p>
+        </div>
+      </section>
+
+      <!-- Démarche -->
+      <section class="alt" id="demarche" aria-labelledby="demarche-titre">
+        <div class="wrap">
+          <div class="section-head narrow">
+            <span class="kicker">Ce que propose ventepme.finance</span>
+            <h2 id="demarche-titre">Une préparation en trois temps</h2>
+            <p>Nous intervenons en amont, quand vous commencez à y penser, pour que vous abordiez l’opération en connaissance de cause.</p>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <div class="num">1</div>
+              <h3>Un diagnostic avec un ancien dirigeant</h3>
+              <p>
+                Un échange approfondi avec un ancien chef d’entreprise, passé par la banque d’affaires et la croissance
+                externe d’un grand groupe. Il comprend vos contraintes de l’intérieur&nbsp;: forces du dossier, points de
+                vigilance, repères de valorisation, calendrier réaliste.
+              </p>
+            </article>
+            <article class="step">
+              <div class="num">2</div>
+              <h3>La rencontre de plusieurs spécialistes</h3>
+              <p>
+                Nous vous présentons trois ou quatre spécialistes de la cession choisis pour votre profil&nbsp;: votre
+                secteur, la taille de votre entreprise, vos objectifs. Vous comparez les approches avant de vous engager.
+              </p>
+              <div class="places"><span>Votre ville</span><span>Votre région</span><span>Paris</span></div>
+            </article>
+            <article class="step">
+              <div class="num">3</div>
+              <h3>Le choix de votre conseil</h3>
+              <p>
+                Nous vous aidons à comparer les propositions, à comprendre les mandats et les honoraires, et à choisir le
+                conseil qui vous correspond. Vous restez libre et seul décisionnaire.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pourquoi un conseil -->
+      <section aria-labelledby="pourquoi">
+        <div class="wrap why-grid">
+          <div>
+            <span class="kicker">Pourquoi un conseil en cession</span>
+            <h2 id="pourquoi">Vendre une entreprise est un métier</h2>
+            <p style="margin-top: 18px">
+              Vous avez besoin d’un intermédiaire qui sache à la fois vendre, écouter et traduire. Un bon conseil réunit
+              trois qualités rarement réunies&nbsp;:
             </p>
-            <form id="lead-form">
-              <div class="grid2">
-                <input type="text" name="name" placeholder="Nom et prénom" aria-label="Nom et prénom" />
-                <input type="email" name="email" placeholder="Email professionnel" aria-label="Email professionnel" />
+            <ul class="qualities">
+              <li><strong>La culture commerciale</strong> pour présenter votre entreprise, susciter l’intérêt de plusieurs acquéreurs et négocier.</li>
+              <li><strong>Le sens de la psychologie</strong> pour vous comprendre, vous et vos priorités, et tenir compte de ce qui ne figure dans aucun bilan.</li>
+              <li><strong>La double lecture</strong> des lettres de votre avocat et des chiffres de votre expert-comptable, pour faire avancer l’ensemble dans la même direction.</li>
+            </ul>
+            <blockquote>Un bon conseil se choisit comme un associé, pas comme un fournisseur.</blockquote>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 16px">Chacun son rôle</h3>
+            <div class="roles">
+              <div class="role">
+                <h3>L’expert-comptable</h3>
+                <p>Fiabilise les comptes, prépare les éléments financiers et éclaire les conséquences fiscales.</p>
               </div>
-              <div class="grid2">
-                <input type="text" name="company" placeholder="Société" aria-label="Société" />
-                <select name="need" aria-label="Besoin principal">
-                  <option>Cession de PME</option>
-                  <option>Transmission</option>
-                  <option>Croissance externe</option>
-                  <option>Évaluation / stratégie</option>
+              <div class="role">
+                <h3>L’avocat</h3>
+                <p>Rédige et sécurise les actes&nbsp;: lettre d’intention, protocole, garanties d’actif et de passif.</p>
+              </div>
+              <div class="role main">
+                <h3>Le conseil en cession</h3>
+                <p>Valorise l’entreprise, trouve et met en concurrence les acquéreurs, mène la négociation et orchestre l’opération jusqu’à la signature.</p>
+              </div>
+            </div>
+            <p style="margin-top: 18px; font-size: 0.97rem">
+              Une répartition claire des rôles évite la confusion et les surcoûts. Elle permet à chacun de donner le
+              meilleur de son expertise, au service de votre projet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Engagements -->
+      <section class="alt" aria-labelledby="engagements">
+        <div class="wrap">
+          <div class="section-head narrow">
+            <span class="kicker">Nos engagements</span>
+            <h2 id="engagements">Un cadre de confiance</h2>
+          </div>
+          <div class="pledges">
+            <div class="pledge">
+              <div class="mark">1</div>
+              <h3>Confidentialité absolue</h3>
+              <p>Aucune information n’est transmise à un conseil sans votre accord préalable et la signature d’un engagement de confidentialité.</p>
+            </div>
+            <div class="pledge">
+              <div class="mark">2</div>
+              <h3>Indépendance</h3>
+              <p>Aucun conseil ne paie pour être présenté. Nous ne touchons ni commission ni apport d’affaires de leur part.</p>
+            </div>
+            <div class="pledge">
+              <div class="mark">3</div>
+              <h3>Une sélection resserrée</h3>
+              <p>Trois ou quatre interlocuteurs pertinents, pas davantage, pour vous faire gagner du temps et respecter le leur.</p>
+            </div>
+            <div class="pledge">
+              <div class="mark">4</div>
+              <h3>Vous décidez</h3>
+              <p>Nous recommandons, vous choisissez. Vous gardez la maîtrise du rythme et de chaque étape.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formulaire -->
+      <section class="contact" id="contact" aria-labelledby="contact-titre">
+        <div class="wrap contact-grid">
+          <div class="contact-side">
+            <span class="kicker">Premier échange</span>
+            <h2 id="contact-titre">Parlons de votre projet, même s’il est lointain</h2>
+            <p style="margin-top: 18px">
+              Que la cession soit envisagée dans six mois ou dans cinq ans, il n’est jamais trop tôt pour en parler.
+              Laissez-nous vos coordonnées&nbsp;: nous vous rappelons pour un échange confidentiel.
+            </p>
+            <ul>
+              <li><strong>Sans engagement.</strong> Le premier échange est gratuit.</li>
+              <li><strong>Confidentiel.</strong> Vos informations ne sont jamais partagées sans votre accord.</li>
+              <li><strong>Personnel.</strong> Vous parlez à un ancien dirigeant, pas à un centre d’appels.</li>
+            </ul>
+          </div>
+
+          <form id="lead-form" novalidate>
+            <h3>Être rappelé</h3>
+            <p class="hint">Les champs sans mention sont obligatoires.</p>
+            <div class="row">
+              <label>Prénom et nom<input type="text" name="nom" autocomplete="name" required /></label>
+              <label>Fonction<input type="text" name="fonction" placeholder="Président, gérant…" autocomplete="organization-title" required /></label>
+            </div>
+            <div class="row">
+              <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+              <label>Téléphone<input type="tel" name="telephone" autocomplete="tel" required /></label>
+            </div>
+            <div class="row">
+              <label>Entreprise<input type="text" name="entreprise" autocomplete="organization" required /></label>
+              <label>Ville ou région<input type="text" name="ville" required /></label>
+            </div>
+            <div class="row">
+              <label>Chiffre d’affaires
+                <select name="ca" required>
+                  <option value="">Choisir…</option>
+                  <option>Moins de 2 M€</option>
+                  <option>2 à 10 M€</option>
+                  <option>10 à 50 M€</option>
+                  <option>Plus de 50 M€</option>
                 </select>
-              </div>
-              <textarea name="message" placeholder="Décrivez brièvement votre projet"></textarea>
-              <button class="button primary submit" type="submit">Demander un échange</button>
-            </form>
+              </label>
+              <label>Horizon envisagé
+                <select name="horizon" required>
+                  <option value="">Choisir…</option>
+                  <option>Moins d’un an</option>
+                  <option>Un à trois ans</option>
+                  <option>Trois à cinq ans</option>
+                  <option>Simple réflexion pour l’instant</option>
+                </select>
+              </label>
+            </div>
+            <label>Votre situation en quelques mots <span class="opt">(facultatif)</span>
+              <textarea name="message" placeholder="Secteur, motif de la réflexion, transmission familiale envisagée…"></textarea>
+            </label>
+            <input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label class="consent">
+              <input type="checkbox" name="consentement" required />
+              J’accepte d’être recontacté au sujet de mon projet. Mes informations restent confidentielles et ne sont
+              transmises à aucun tiers sans mon accord.
+            </label>
+            <button class="btn" type="submit">Demander à être rappelé</button>
+            <p class="form-foot">Ou écrivez-nous directement&nbsp;: <a href="mailto:cauger@repertoire.finance">cauger@repertoire.finance</a></p>
+            <div class="form-ok" id="form-ok" role="status"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- repertoire.finance -->
+      <section class="rf" aria-labelledby="rf-titre">
+        <div class="wrap">
+          <div class="rf-card">
+            <img src="assets/logo-repertoire-finance.png" alt="Logo repertoire.finance" width="92" height="92" />
+            <div>
+              <span class="kicker">Partenaire</span>
+              <h2 id="rf-titre">Visitez repertoire.finance, le meilleur endroit pour trouver le bon partenaire</h2>
+              <p>
+                L’annuaire indépendant des boutiques M&amp;A, banques d’affaires et conseils en cession en France. Pour
+                comprendre qui intervient sur quel secteur et quelle taille d’opération, et choisir en connaissance de cause.
+              </p>
+              <ul class="rf-points">
+                <li>Accès gratuit</li>
+                <li>Plusieurs milliers de professionnels recensés</li>
+                <li>Aucun conseil ne paie pour y figurer</li>
+              </ul>
+            </div>
+            <a class="btn" href="https://repertoire.finance" target="_blank" rel="noopener">Visiter repertoire.finance</a>
           </div>
+        </div>
+      </section>
+    </main>
 
-          <aside class="aside-box">
-            <h3>Pourquoi ce format fonctionne</h3>
-            <div class="check">
-              <span>✓</span>
-              <p>Une proposition de valeur simple, orientée direction d’entreprise.</p>
-            </div>
-            <div class="check">
-              <span>✓</span>
-              <p>Un design premium qui inspire confiance sur un sujet sensible.</p>
-            </div>
-            <div class="check">
-              <span>✓</span>
-              <p>Le logo est mis en avant comme repère de marque dès le premier écran.</p>
-            </div>
-            <div class="check">
-              <span>✓</span>
-              <p>Le CTA reste évident sur desktop comme sur mobile.</p>
-            </div>
-          </aside>
-        </section>
-      </main>
+    <footer>
+      <div class="wrap">
+        <span>© 2026 ventepme.finance · Préparer la cession et la transmission de PME</span>
+        <span>En partenariat avec <a href="https://repertoire.finance" target="_blank" rel="noopener">repertoire.finance</a></span>
+      </div>
+    </footer>
 
-      <footer>
-        © 2026 ventepme.finance. Accompagnement M&A pour dirigeants de PME.
-      </footer>
-    </div>
     <script>
       const form = document.getElementById("lead-form");
+      const ok = document.getElementById("form-ok");
       form.addEventListener("submit", (event) => {
         event.preventDefault();
-        const data = new FormData(form);
-        const name = data.get("name") || "Bonjour";
-        const email = data.get("email") || "";
-        const company = data.get("company") || "";
-        const need = data.get("need") || "";
-        const message = data.get("message") || "";
-        const body = [
-          `Nom: ${name}`,
-          `Email: ${email}`,
-          `Société: ${company}`,
-          `Besoin: ${need}`,
+        if (form.site.value) return;
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        const d = new FormData(form);
+        const lines = [
+          `Nom : ${d.get("nom")}`,
+          `Fonction : ${d.get("fonction")}`,
+          `Email : ${d.get("email")}`,
+          `Téléphone : ${d.get("telephone")}`,
+          `Entreprise : ${d.get("entreprise")}`,
+          `Ville / région : ${d.get("ville")}`,
+          `Chiffre d'affaires : ${d.get("ca")}`,
+          `Horizon : ${d.get("horizon")}`,
           "",
-          message,
-        ].join("\n");
-        const subject = encodeURIComponent("Nouveau lead ventepme.finance");
-        const mailBody = encodeURIComponent(body);
-        window.location.href = `mailto:cauger@repertoire.finance?subject=${subject}&body=${mailBody}`;
+          d.get("message") || "",
+        ];
+        const subject = encodeURIComponent(`ventepme.finance : demande de rappel (${d.get("entreprise")})`);
+        const body = encodeURIComponent(lines.join("\n"));
+        if (window.va) window.va("event", { name: "lead_form_submit" });
+        window.location.href = `mailto:cauger@repertoire.finance?subject=${subject}&body=${body}`;
+        ok.textContent = "Votre messagerie s’ouvre avec votre demande pré-remplie : il ne vous reste qu’à l’envoyer. Si rien ne s’ouvre, écrivez-nous à cauger@repertoire.finance.";
+        ok.classList.add("show");
       });
     </script>
   </body>
