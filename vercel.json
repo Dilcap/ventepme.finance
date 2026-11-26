@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "ventepme.finance" }],
+      "destination": "https://www.ventepme.finance/:path*",
+      "permanent": true
+    }
+  ]
+}
